@@ -2,15 +2,16 @@ const mario = document.querySelector(".mario")
 const pipe = document.querySelector(".pipe")
 const startButtom = document.querySelector(".start")
 const gameOverScree = document.querySelector(".game-over")
-
+const scoreElement = document.querySelector(".score")
 
 
 audioStart = new Audio("./sound/audio_theme.mp3");
 const gameOverSound = new Audio("./sound/audio_gameover.mp3");
 
 let gameStarted = false;
+let score = 0;
 
-const startGame = () => () {
+const startGame = () => {
     gamestarted = true;
     pipe.style.animation = "pipe-animation1.5s infinite linear"; 
 
@@ -21,13 +22,20 @@ const startGame = () => () {
 }
 
 
-const jump() {
+const jump = () => {
     mario.classList.add("jump");
 
     setTimeout(() => {
         mario.classList.remove("jump");
     },
         500);
+}
+
+const updateScore = () => {
+score +=1;
+scoreElement.textContent = score;
+const animation = 1.5/ (1 + score/500);
+pipe.style.animation = `ipe-animation ${animationSpeed}S infinite linear`;
 }
 
 const loop = setInterval(() => {
@@ -48,6 +56,8 @@ const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
         clearInterval(loop);
         gameOverScreen.style.display = "flex";
     } else if(pipePosition , 0 && gameStarted){
+        updateScore()
+        pipe.style.left();
 }
 },10);
 document.addEventListener("keydown", jump);

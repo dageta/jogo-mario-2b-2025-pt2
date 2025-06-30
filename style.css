@@ -16,7 +16,7 @@
 
 .pipe, mario, nuvem{
   opacity: 0;
-  transition: opacity: opacity 0.5s ease-in-out;
+  transition: opacity opacity 0.5s ease-in-out;
 }
 
 .pipe {
@@ -41,7 +41,6 @@
   width: 550px;
   animation: clouds-animation 20s infinite linear;
 }
-
 
 button {
   background: green;
@@ -75,6 +74,11 @@ button.start {
   padding: 10px;
   border-radius: 8px;
   font-family: 'Arial', sans-serif;
+}
+
+.score span{
+  font-weight: bold;
+  font-size: 30px;
 }
 .game-over {
   width: 100%;
