@@ -34,10 +34,10 @@ const jump = () => {
 }
 
 const updateScore = () => {
-score +=1;
+score += 1;
 scoreElement.textContent = score;
 const animationSpeed = 1.5/ (1 + score/500);
-pipe.style.animation = `ipe-animation ${animationSpeed}S infinite linear`;
+pipe.style.animation = `pipe-animation ${animationSpeed}S infinite linear`;
 }
 
 const loop = setInterval(() => {
